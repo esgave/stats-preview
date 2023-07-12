@@ -1,0 +1,131 @@
+:root {
+    --VeryDarkBlue: hsl(233, 47%, 7%);
+    --DarkDesaturatedBlue: hsl(244, 38%, 16%);
+    --SoftViolet: hsl(277, 64%, 61%);
+    --SoftVioletOverlay: hsla(277, 64%, 61%, 60%);
+    --White: hsl(0, 0%, 100%);
+    --SlightlyTransparentWhite: hsla(0, 0%, 100%, 0.75);
+    --SlightlyTransparentWhiteStats: hsla(0, 0%, 100%, 0.6);
+    --Font-Inter: 'Inter', sans-serif;
+    --Font-LexendDeca: 'Lexend Deca', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /* Box Model Hack **/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--VeryDarkBlue);
+    font-family: var(--Font-Inter);
+    text-align: center;
+    color: var(--SlightlyTransparentWhite);
+    font-family: var(--Font-LexendDeca);
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+h1 {
+    color: var(--White);
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0;
+}
+
+span {
+    color: var(--SoftViolet);
+}
+
+main {
+    background-color: var(--DarkDesaturatedBlue);
+    margin: 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.card-image {
+    background-color: var(--SoftVioletOverlay);
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.card-image img.overlay {
+    mix-blend-mode: overlay;
+}
+
+.card-text {
+    padding: 2rem;
+}
+
+.stats-bold {
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--White);
+    margin-bottom: 0;
+}
+
+.stats-uppercase {
+    color: var(--SlightlyTransparentWhiteStats);
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+@media (min-width: 1025px) {
+    main {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-radius: 1.5rem 0 0 1.5rem;
+        text-align: left;
+        width: 80%;
+    }
+
+    img {
+        border-radius: 0 1.5rem 1.5rem 0;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .card-image {
+        display: grid;
+        grid-column: 2 / 3;
+        border-radius: 0 1.5rem 1.5rem 0;
+
+    }
+
+    .card-text {
+        display: grid;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        padding: 6.5rem;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: end;
+    }
+
+    .stats p {
+        margin: 0;
+    }
+}
